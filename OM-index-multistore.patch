@@ -1,0 +1,58 @@
+--- /dev/null
++++ ../index.php	2023-10-30 13:25:16.818606300 +0100
+@@ -25,7 +25,7 @@
+
+ #Varien_Profiler::enable();
+
+-umask(0);
++umask(027);
+
+ /* Store or website code */
+ $mageRunCode = $_SERVER['MAGE_RUN_CODE'] ?? '';
+@@ -57,4 +57,46 @@
+     $config->getCache()->remove($config->getCacheId());
+ }
+
++switch($_SERVER['SERVER_NAME'])
++{
++  case 'haveglad.dk':
++	case 'www.haveglad.dk':
++		$mageRunCode = 'haveglad';
++		$mageRunType = 'website';
++	break;
++
++	case 'fyr-selv.dk':
++	case 'www.fyr-selv.dk':
++		$mageRunCode = 'fyrselv';
++		$mageRunType = 'website';
++	break;
++
++  case 'fyrselv.dk':
++	case 'www.fyrselv.dk':
++		$mageRunCode = 'fyrselv';
++		$mageRunType = 'website';
++	break;
++
++	case 'braende24syv.dk':
++	case 'www.braende24syv.dk':
++		$mageRunCode = 'base';
++		$mageRunType = 'website';
++	break;
++
++	case 'bigbag.dk':
++	case 'www.bigbag.dk':
++		$mageRunCode = 'bigbag';
++		$mageRunType = 'website';
++	break;
++
++	case 'bmbimport.dk':
++	case 'engros.bmbimport.dk':
++		$mageRunCode = 'bmbengros';
++		$mageRunType = 'website';
++	break;
++
++  default:
++  break;
++}
++
+ Mage::run($mageRunCode, $mageRunType);
