@@ -1,0 +1,12 @@
+diff -Naur a/js/lib/jquery/noconflict.js b/js/lib/jquery/noconflict.js
+--- a/js/lib/jquery/noconflict.js	2024-01-23 12:33:20.665737400 +0100
++++ b/js/lib/jquery/noconflict.js	2024-01-23 12:33:51.156267200 +0100
+@@ -13,4 +13,5 @@
+  */
+ 
+ // Avoid PrototypeJS conflicts, assign jQuery to $j instead of $
+-var $j = jQuery.noConflict();
+\ No newline at end of file
++var $j = jQuery.noConflict();
++var gtmPro = $j.noConflict();
+\ No newline at end of file
