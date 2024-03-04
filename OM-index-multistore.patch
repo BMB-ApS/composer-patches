@@ -17,12 +17,14 @@
 +{
 +  case 'haveglad.dk':
 +	case 'www.haveglad.dk':
++	case 'prod2.haveglad.dk':
 +		$mageRunCode = 'haveglad';
 +		$mageRunType = 'website';
 +	break;
 +
 +	case 'fyr-selv.dk':
 +	case 'www.fyr-selv.dk':
++	case 'prod2.fyr-selv.dk':
 +		$mageRunCode = 'fyrselv';
 +		$mageRunType = 'website';
 +	break;
@@ -35,12 +37,14 @@
 +
 +	case 'braende24syv.dk':
 +	case 'www.braende24syv.dk':
++	case 'prod2.braende24syv.dk':
 +		$mageRunCode = 'base';
 +		$mageRunType = 'website';
 +	break;
 +
 +	case 'bigbag.dk':
 +	case 'www.bigbag.dk':
++	case 'prod2.bigbag.dk':
 +		$mageRunCode = 'bigbag';
 +		$mageRunType = 'website';
 +	break;
