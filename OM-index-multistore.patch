@@ -1,18 +1,20 @@
---- /dev/null
-+++ ../index.php	2023-10-30 13:25:16.818606300 +0100
+--- a/index.php	2024-04-09 08:44:57.596208200 +0200
++++ b/index.php	2024-04-09 08:45:46.245468200 +0200
 @@ -25,7 +25,7 @@
-
+ 
  #Varien_Profiler::enable();
-
+ 
 -umask(0);
 +umask(027);
-
+ 
  /* Store or website code */
  $mageRunCode = $_SERVER['MAGE_RUN_CODE'] ?? '';
-@@ -57,4 +57,46 @@
+@@ -53,4 +53,51 @@
      $config->getCache()->remove($config->getCacheId());
  }
-
+ 
+-Mage::run($mageRunCode, $mageRunType);
++
 +switch($_SERVER['SERVER_NAME'])
 +{
 +  case 'haveglad.dk':
@@ -59,4 +61,5 @@
 +  break;
 +}
 +
- Mage::run($mageRunCode, $mageRunType);
++Mage::run($mageRunCode, $mageRunType);
+\ No newline at end of file
